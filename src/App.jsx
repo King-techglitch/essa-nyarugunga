@@ -31,17 +31,25 @@ const RouteWrapper = ({ children }) => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<RouteWrapper><Home /></RouteWrapper>} />
-        <Route path="/about" element={<RouteWrapper><About /></RouteWrapper>} />
-        <Route path="/academics" element={<RouteWrapper><Academic /></RouteWrapper>} />
-        <Route path="/admissions" element={<RouteWrapper><Admissions /></RouteWrapper>} />
-        <Route path="/contact" element={<RouteWrapper><ContactUs /></RouteWrapper>} />
-        <Route path="/students" element={<RouteWrapper><StudentLife /></RouteWrapper>} />
-        <Route path="*" element={<RouteWrapper><ErrorPage /></RouteWrapper>} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <a href="#main-content" className="sr-only focus:not-sr-only">
+        Skip to main content
+      </a>
+
+      <BrowserRouter>
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<RouteWrapper><Home /></RouteWrapper>} />
+            <Route path="/about" element={<RouteWrapper><About /></RouteWrapper>} />
+            <Route path="/academics" element={<RouteWrapper><Academic /></RouteWrapper>} />
+            <Route path="/admissions" element={<RouteWrapper><Admissions /></RouteWrapper>} />
+            <Route path="/contact" element={<RouteWrapper><ContactUs /></RouteWrapper>} />
+            <Route path="/students" element={<RouteWrapper><StudentLife /></RouteWrapper>} />
+            <Route path="*" element={<RouteWrapper><ErrorPage /></RouteWrapper>} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </>
   )
 }
 
